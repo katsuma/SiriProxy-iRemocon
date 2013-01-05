@@ -1,3 +1,7 @@
 - name: 'Iremocon'
   git: 'git@github.com:katsuma/SiriProxy-iRemocon.git'
   host: '192.168.0.9'
+  signals:
+      light:
+          turn_on: 1000
+          turn_off: 1001
