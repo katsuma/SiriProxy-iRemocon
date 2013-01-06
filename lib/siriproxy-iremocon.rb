@@ -17,14 +17,26 @@ class SiriProxy::Plugin::Iremocon < SiriProxy::Plugin
   end
 
   listen_for /(ライト?|電?気)を?(つけて|付けて)/ do
-    say 'ライトをつけます'
+    say 'ライトをつけました'
     signal_to_iremocon(self.signals['light']['turn_on'])
     request_completed
   end
 
   listen_for /(ライト?|電?気)を?(けして|消して)/ do
-    say 'ライトを消します'
+    say 'ライトを消しました'
     signal_to_iremocon(self.signals['light']['turn_off'])
+    request_completed
+  end
+
+  listen_for /エアコン?を?(つけて|付けて)/ do
+    say 'エアコンをつけました'
+    signal_to_iremocon(self.signals['aircon']['turn_on'])
+    request_completed
+  end
+
+  listen_for /エアコン?を?(けして|消して)/ do
+    say 'エアコンを消しました'
+    signal_to_iremocon(self.signals['aircon']['turn_off'])
     request_completed
   end
 end

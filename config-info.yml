@@ -5,3 +5,8 @@
       light:
           turn_on: 1000
           turn_off: 1001
+      aircon:
+          turn_on:   1300
+          turn_off:  1301
+          heat_up:   1302
+          heat_down: 1303
